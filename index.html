@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Redirecting to WhatsApp...</title>
+</head>
+<body>
+
+<h3>Redirecting to WhatsApp…</h3>
+
+<script>
+const params = new URLSearchParams(window.location.search);
+
+const msg = `
+नया ऑर्डर प्राप्त हुआ 👇
+
+नाम: ${params.get("name")}
+पता: ${params.get("address")}
+पिनकोड: ${params.get("pincode")}
+जिला: ${params.get("district")}
+मोबाइल: ${params.get("mobile")}
+क्वांटिटी: ${params.get("qty")}
+`;
+
+const url =
+"https://wa.me/918347605837?text=" + encodeURIComponent(msg);
+
+window.location.href = url;
+</script>
+
+</body>
+</html>
